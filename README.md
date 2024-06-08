@@ -1,5 +1,5 @@
 # Resizr
-Resizr is a lightweight image resizer / thumb generator for PHP. Unlike other "mainstream" thumb generators, Resizr keeps the correct aspect ratio of the images, while keeping the maximum sizes below the ones you've set. It also compresses your images to speed up page loading times.
+Resizr is a lightweight image resizer / thumb generator for PHP. By default, it keeps the correct aspect ratio of the images, while keeping the maximum sizes below the ones you've set. It also compresses your images to speed up page loading times.
 
 ## Supported image extensions
 Currently, Resizr supports the conversion of **JPEG, PNG, BMP and WEBP** images.
@@ -26,12 +26,11 @@ Parameter|Type|Required|Default|Details
 When calling Resizr, the script will check if the image you are loading was already generated in the desired sizes. If so, Resizr will load the cached image, otherwise it will generate the new image and store it in the cache folder for future calls. This optimizes the script performance and reduces server load.
 
 ## User settings
-In `resizr.php` file, between the lines `14-36` you can find Resizr user settings. You are free to edit this settings to fill your needs.
+If you want to change Resizr default settings, copy the `resizr-config.php` file to the same folder as the `resizr.php` file and edit it as you need.
 
 Setting|Type|Default|Details
 ---|:---:|:---:|---
 `cache_folder`|string|cache|Cache storage folder location. This folder is relative to the script file path. **It must have writing permissions!**
-`allow_external`|bool|false|Allow Resizr to load images outside the script server. Leaving this setting on is **not recommended**, as it may have security impacts. Use with caution.
 `default_width`|int|200|Default max width to use when the `w` URL parameter is not specified.
 `default_height`|int|200|Default max height to use when the `h` URL parameter is not specified.
 `jpeg_quality`|int|70|JPEG quality level to use while compressing images. Goes from **0** (worst quality) to **100** (best quality).
